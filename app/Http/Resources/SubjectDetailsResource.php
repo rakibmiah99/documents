@@ -22,10 +22,10 @@ class SubjectDetailsResource extends JsonResource
             'name' => $this->name,
             'slug' => $this->slug,
             'subject_groups' => SubjectGroupResource::collection($subject_group),
-            'first_topic_details' => [
+            /*'first_topic_details' => [
                 'topic' => TopicResource::make($first_topic),
                 'details' => TopicDetailsResource::collection($first_topic->topic_details)
-            ]
+            ]*/
         ];
     }
 }

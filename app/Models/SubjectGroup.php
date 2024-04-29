@@ -14,4 +14,9 @@ class SubjectGroup extends Model
     public function topics(){
         return $this->hasMany(Topic::class, 'subject_group_id', 'id');
     }
+
+    public function subject(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->belongsTo(Subject::class, 'subject_id', 'id');
+    }
 }

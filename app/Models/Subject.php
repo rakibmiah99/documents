@@ -21,4 +21,13 @@ class Subject extends Model
     {
         return $this->hasMany(SubjectGroup::class, 'subject_id', 'id');
     }
+
+    public function topics(){
+        return $this->hasManyThrough(
+          Topic::class,
+          SubjectGroup::class,
+          'subject_id',
+                'subject_group_id'
+        );
+    }
 }

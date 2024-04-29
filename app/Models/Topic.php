@@ -16,4 +16,9 @@ class Topic extends Model
     {
         return $this->hasMany(TopicDetails::class, 'topic_id', 'id');
     }
+
+    public function subject_group(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->belongsTo(SubjectGroup::class, 'subject_group_id', 'id');
+    }
 }
